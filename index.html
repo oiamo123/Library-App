@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Library App</title>
+  </head>
+  <body>
+    <header>
+      <h1>LIBRARY</h1>
+      <h1>APP</h1>
+    </header>
+    <div class="add--book">
+      <input type="checkbox" id="theme" style="display: none" /><label
+        for="theme"
+      ></label>
+      <button class="add--book">ADD BOOK</button>
+    </div>
+    <main>
+      <div class="book book--read" id="TheHobbit">
+        <h3 class="title">
+          The Hobbit
+          <button
+            class="card--button button--read"
+            onclick="readFunction(this)"
+          >
+            READ
+          </button>
+        </h3>
+        <p class="author">Author: J.R.R Tolkien</p>
+        <p class="pages">
+          Pages: 295
+          <button
+            class="card--button button--remove"
+            onclick="removeCard(this)"
+          >
+            Remove
+          </button>
+        </p>
+      </div>
+    </main>
+    <aside class="--hidden">
+      <div>
+        <label for="new--book--title"
+          >Title: <input type="text" id="new--book--title" /></label
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="icon close--modal"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </div>
+
+      <label for="new--book--author"
+        >Author: <input type="text" id="new--book--author"
+      /></label>
+
+      <label for="new--book--pages"
+        >Pages:
+
+        <input type="text" id="new--book--pages"
+      /></label>
+
+      <label for="new--book--read"
+        >Have you read it? <input type="checkbox" id="new--book--read"
+      /></label>
+      <button class="submit--book">SUBMIT</button>
+    </aside>
+  </body>
+  <script src="./javascript.js"></script>
+</html>

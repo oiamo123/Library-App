@@ -1,0 +1,270 @@
+:root.light {
+  --accents: #e9ecef;
+  --text: #343a40;
+  --main: #fff;
+  --button: #343a40;
+  --button-font: #fff;
+  --button-hover: #fff;
+  --button-hover-font: #343a40;
+}
+
+:root.dark {
+  --accents: #343a40;
+  --text: #f1f3f5;
+  --main: #868e96;
+  --button: #868e96;
+  --button-font: #fff;
+  --button-hover: #fff;
+  --button-hover-font: #343a40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--main);
+}
+
+body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px auto 5fr;
+  font-family: "Rubik", sans-serif;
+  color: var(--text);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10%;
+  gap: 10px;
+  background-color: var(--main);
+}
+
+header h1 {
+  font-size: 56px;
+}
+
+.add--book {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--accents);
+  padding: 30px 130px;
+}
+
+.add--book button {
+  padding: 12px 24px;
+  font-size: 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 15%);
+  background-color: var(--button);
+  color: var(--button-font);
+}
+
+.add--book button:hover {
+  cursor: pointer;
+  box-shadow: 0 12px 12px 12px rgba(0, 0, 0, 15%);
+  color: #343a40;
+  background-color: #fff;
+}
+
+.add--book button:active {
+  box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 15%);
+}
+
+.icon {
+  width: 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main);
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 500px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: var(--accents);
+  border-radius: 10px;
+  box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 15%);
+}
+
+.author,
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#read {
+  display: none;
+}
+
+label[for="read"] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+label[for="read"]::after {
+  content: "";
+  position: absolute;
+  left: 2.5px;
+  top: 2.5px;
+  width: 15px;
+  height: 15px;
+  background-color: #343a40;
+  border-radius: 50px;
+}
+
+label[for="read"]:hover {
+  cursor: pointer;
+}
+
+#read:checked + label[for="read"]::after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.book p {
+  font-weight: 500;
+  word-spacing: 5px;
+}
+
+#theme[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label[for="theme"] {
+  cursor: pointer;
+  position: relative;
+  height: 40px;
+  width: 80px;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+label[for="theme"]::after {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  background-color: #343a40;
+  transition: 0.3s;
+}
+
+#theme:checked + label[for="theme"] {
+  background-color: #343a40;
+}
+
+#theme:checked + label[for="theme"]::after {
+  background-color: #fff;
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+aside {
+  font-size: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--accents);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 20px 20px 20px rgba(0, 0, 0, 15%);
+}
+
+label[for="new--book--title"] {
+  padding-left: 22px;
+}
+label[for="new--book--pages"] {
+  padding-left: 7px;
+}
+
+aside label {
+  display: flex;
+  gap: 10px;
+}
+
+label[for="new--book--read"] {
+  align-self: center;
+}
+
+aside div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside button {
+  font-size: 18px;
+  padding: 8px 16px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: var(--button);
+  color: var(--button-font);
+}
+
+aside button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover);
+  color: var(--button-hover-font);
+}
+
+aside .icon:hover {
+  cursor: pointer;
+  stroke: #f03e3e;
+}
+
+.card--button {
+  background-color: var(--button);
+  color: var(--button-font);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.card--button:hover {
+  cursor: pointer;
+  background-color: var(--button-hover);
+  color: var(--button-hover-font);
+}
+
+.button--remove:hover {
+  background-color: #f03e3e;
+}
+
+.--hidden {
+  display: none;
+}
